@@ -4,21 +4,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Jogo da Elda – Edição Crush</title>
+
 <style>
   body {
     font-family: Arial, sans-serif;
-    background: #fff7d9;
+    background: url('https://i.imgur.com/9hZ7j0B.jpeg') no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
     padding: 20px;
   }
+
   .card {
-    background: white;
+    background: rgba(255,255,255,0.9);
     padding: 20px;
     margin: auto;
     max-width: 480px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
   }
+
   button {
     background: #ffd84d;
     border: none;
@@ -28,10 +32,12 @@
     border-radius: 10px;
     font-size: 16px;
   }
+
   button:hover { background: #ffcc00; }
   .hidden { display: none; }
 </style>
 </head>
+
 <body>
   <div class="card" id="inicio">
     <h1>🎉 Jogo da Elda – Edição Crush 🎉</h1>
@@ -44,7 +50,7 @@
   <div class="card hidden" id="final">
     <h2>🎂 Feliz Aniversário, Elda! 🎂</h2>
     <p>Tu és incrível e espero que este joguinho tenha feito você sorrir 💛😄</p>
-    <p>Sim… alguém fez isso aqui so para ti 👀✨</p>
+    <p>Sim… alguém fez isso aqui só para ti 👀✨</p>
   </div>
 
 <script>
@@ -67,7 +73,6 @@ const perguntas = [
   { q: "Quem fez este jogo só para te ver sorrir?", a: ["Um fã misterioso", "Um admirador secreto", "Alguém que acha-te incrível", "O autor deste quiz 👉"] }
 ];
 
-
 let index = 0;
 
 function startGame() {
@@ -89,7 +94,7 @@ function showQuestion() {
 
   box.innerHTML = `
     <h2>${p.q}</h2>
-    ${p.a.map(a => `<button onclick=\"next()\">${a}</button>`).join("<br><br>")}
+    ${p.a.map(a => `<button onclick="next()">${a}</button>`).join("<br><br>")}
   `;
 }
 
